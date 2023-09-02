@@ -1,9 +1,9 @@
-function Pokemoncard({pokemon}){
+function Pokemoncard({imgSrc,name}){
     return (
 
  <div>
-    <figure>{pokemon.imgSrc === undefined ?"???": <img src = {pokemon.imgSrc} alt= {pokemon.name}/>}
-      <figcaption>{pokemon.name}</figcaption>
+    <figure>{imgSrc === undefined ?"???": <img src = {imgSrc} alt= {name}/>}
+      <figcaption>{name}</figcaption>
    </figure>
 </div>
     );

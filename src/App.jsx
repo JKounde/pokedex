@@ -17,7 +17,7 @@ function App() {
  
   return (
     <>
-      <Pokemoncard pokemon={pokemonList[0]}/>
+      <Pokemoncard {...pokemonList[1]}/>
     </>
   )
 }
