@@ -29,27 +29,29 @@ const pokemonList = [
       name: "mew",
     },
   ];
-
-function App() {
-
  
-
-  const [count,setcount] = useState(0)
-  const handlePreviousClick =() => {
-    setcount (count -1)
-  }
-  const handleNextClick=() => {
-    setcount (count +1)
-  }
-
   
- 
-  return (
-    <>
-     <Pokemoncard {...pokemonList[count]}/>
-     <NavBar handlePreviousClick ={handlePreviousClick} handleNextClick={handleNextClick}/> 
-    </>
-  )
-}
-
-export default App
+  function App() {
+    const [pokemonIndex,setpokemonIndex] = useState(0)
+  
+  
+    const handlePreviousClick =() => {
+      if(pokemonIndex > 0)
+      setpokemonIndex (pokemonIndex -1)
+    }
+  
+    const handleNextClick=() => {
+      if(pokemonIndex < pokemonList.length - 1)
+      setpokemonIndex (pokemonIndex +1)
+    }
+   
+    return (
+      <>
+       <Pokemoncard {...pokemonList[pokemonIndex]}/>
+      <button onClick={handlePreviousClick}>Précédent</button>
+      <button onClick={handleNextClick}>Suivant</button>
+      </>
+    )
+  }
+  
+  export default App
