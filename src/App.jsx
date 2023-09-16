@@ -1,7 +1,6 @@
 import './App.css'
 import Pokemoncard from './components/PokemonCard'
 import { useState } from 'react';
-import NavBar from './components/navbar';
 import { useEffect } from 'react';
 
 
