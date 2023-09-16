@@ -2,6 +2,7 @@ import './App.css'
 import Pokemoncard from './components/PokemonCard'
 import { useState } from 'react';
 import { useEffect } from 'react';
+import NavBar from "./components/NavBar"
 
 
 const pokemonList = [
@@ -82,8 +83,7 @@ const pokemonList = [
     return (
       <>
        <Pokemoncard {...pokemonList[pokemonIndex]}/>
-      <button onClick={handlePreviousClick}>Précédent</button>
-      <button onClick={handleNextClick}>Suivant</button>
+        <NavBar/>
       </>
     )
   }
