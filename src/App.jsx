@@ -33,14 +33,6 @@ const pokemonList = [
  
   
   function App() {
-    const [pokemonIndex,setpokemonIndex] = useState(0)
-
-    useEffect(
-      () => {
-        alert( "Hello pokemon trainer :)"); 
-      },
-      []
-    );
   
 /*{name === "pikachu"? useEffect(
   () => {
@@ -49,9 +41,6 @@ const pokemonList = [
   []
 );: <img src= {imgSrc}  alt= {name} />*/
 
-
-
-
     useEffect(
       () => {
         alert( "Hello pokemon trainer :)"); 
@@ -60,30 +49,34 @@ const pokemonList = [
     );
 
 
-    const handlePreviousClick =() => {
-      if(pokemonIndex > 0){
-     
- const previousPokemon = pokemonList[pokemonIndex -1].name;
-  setpokemonIndex (pokemonIndex -1);
 
- if (previousPokemon === "pikachu") {
-  alert("pika pikachu !!!");
- }
-    }};
+    const [pokemonIndex,setpokemonIndex] = useState(0)
+
+    const handlePreviousClick =() => {
+        if(pokemonIndex > 0){
+       
+   const previousPokemon = pokemonList[pokemonIndex -1].name;
+    setpokemonIndex (pokemonIndex -1);
   
-    const handleNextClick=() => {
-      if(pokemonIndex < pokemonList.length - 1){
-      const nextPokemon = pokemonList[pokemonIndex +1].name;
-      setpokemonIndex (pokemonIndex +1);
-      if (nextPokemon ==="pikachu") {
-        alert("pika pikachu !!!");  
-      }
-   }};
+   if (previousPokemon === "pikachu") {
+    alert("pika pikachu !!!");
+   }
+      }};
+    
+      const handleNextClick=() => {
+        if(pokemonIndex < pokemonList.length - 1){
+        const nextPokemon = pokemonList[pokemonIndex +1].name;
+        setpokemonIndex (pokemonIndex +1);
+        if (nextPokemon ==="pikachu") {
+          alert("pika pikachu !!!");  
+        }
+     }};
+
    
     return (
       <>
        <Pokemoncard {...pokemonList[pokemonIndex]}/>
-        <NavBar/>
+        <NavBar handlePreviousClick={handlePreviousClick} handleNextClick={handleNextClick}/>
       </>
     )
   }
